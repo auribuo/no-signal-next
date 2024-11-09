@@ -7,6 +7,7 @@ async function scan() {
     try {
         toggleButton();
         const invoke = window.__TAURI__.core.invoke
+        document.getElementById("spinner-container").style.display = 'block';
         const response = await invoke("scan")
         const devices = response.devices;
         //console.log(devices);
@@ -19,6 +20,8 @@ async function scan() {
         generateVulnChart(devices);
     } catch (error) {
         console.error("Error fetching data:", error);
+    } finally {
+        document.getElementById("spinner-container").style.display = 'none';
     }
 }
 
@@ -181,7 +184,7 @@ function generateVulnChart(devices) {
                 },
                 tooltip: {
                     callbacks: {
-                        label: function(tooltipItem) {
+                        label: function (tooltipItem) {
                             return tooltipItem.label + " vulnerabilities";
                         },
                     },
