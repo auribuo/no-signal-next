@@ -101,6 +101,13 @@ function generateList(devices) {
                 vulnItem.appendChild(vulnDesc); // Append description
                 vulnItem.appendChild(vulnRiscBadge);
 
+                if (vuln.riscLevel == "High" || vuln.riscLevel == "Medium") {
+                    const vulnHelpButton = document.createElement("a");
+                    vulnHelpButton.className = 'href=https://www.telmekom.com/support c3'
+                    vuln.textContent = "Get help"
+                    vulnItem.appendChild(vulnHelpButton);
+                }
+
                 vulnList.appendChild(vulnItem);
             });
 
