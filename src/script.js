@@ -8,13 +8,19 @@ async function scan() {
         toggleButton();
         const invoke = window.__TAURI__.core.invoke
         document.getElementById("spinner-container").style.display = 'block';
+        document.getElementById("chartContainer").style.display = 'none';
+        const button = document.querySelector(".scan-button")
+        button.disabled = true
         const response = await invoke("scan")
+        button.disabled = false
         const devices = response.devices;
         //console.log(devices);
         //console.log(response);
         document.getElementById("errorContainer").style.display = "none";
         // Generate list
         generateList(devices);
+
+        document.getElementById("chartContainer").style.display = 'flex';
 
         // Generate pie chart
         generateVulnChart(devices);
