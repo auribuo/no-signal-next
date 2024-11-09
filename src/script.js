@@ -101,10 +101,13 @@ function generateList(devices) {
                 vulnItem.appendChild(vulnDesc); // Append description
                 vulnItem.appendChild(vulnRiscBadge);
 
-                if (vuln.riscLevel == "High" || vuln.riscLevel == "Medium") {
+                if (vuln.risk_level == "High" || vuln.risk_level == "Medium") {
+                    vulnItem.appendChild(document.createElement("br"))
                     const vulnHelpButton = document.createElement("a");
-                    vulnHelpButton.className = 'href=https://www.telmekom.com/support c3'
-                    vuln.textContent = "Get help"
+                    vulnHelpButton.className = 'c3 inter'
+                    vulnHelpButton.textContent = "Get help"
+                    vulnHelpButton.href = "https://www.telmekom.com/support"
+                    vulnHelpButton.target = "_blank"
                     vulnItem.appendChild(vulnHelpButton);
                 }
 
@@ -192,7 +195,7 @@ function generateVulnChart(devices) {
                 },
                 tooltip: {
                     callbacks: {
-                        label: function (tooltipItem) {
+                        label: function(tooltipItem) {
                             return tooltipItem.label + " vulnerabilities";
                         },
                     },
