@@ -1,0 +1,358 @@
+/** ---------------- Fonts --------------------**/
+
+/* Do Hyeon */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Do Hyeon';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/do-hyeon/DoHyeon-Regular.woff2') format('woff2'),
+        url('/fonts/do-hyeon/DoHyeon-Regular.woff') format('woff'),
+        url('/fonts/do-hyeon/DoHyeon-Regular.ttf') format('truetype'),
+        url('/fonts/do-hyeon/DoHyeon-Regular.svg') format('svg');
+}
+
+/* Inter */
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/inter/inter.woff') format('woff'),
+        url('/fonts/inter/inter.ttf') format('truetype'),
+        url('/fonts/inter/inter.svg') format('svg');
+}
+
+.do-hyeon {
+    font-family: 'Do Hyeon', sans-serif !important;
+}
+
+.inter {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.t1,
+.t1 a,
+.t1 span,
+.t1 li {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: calc(80/20*1rem);
+    line-height: calc(88/20*1rem);
+    color: #FFFFFF;
+    font-weight: normal;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: 0rem;
+}
+
+@media (max-width: 450px) {
+
+    .t1,
+    .t1 a,
+    .t1 span,
+    .t1 li {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: calc(60/20*1rem);
+        line-height: calc(66/20*1rem);
+        color: #FFFFFF;
+        font-weight: normal;
+        text-transform: none;
+        font-style: normal;
+        letter-spacing: 0rem;
+    }
+}
+
+.t2,
+.t2 a,
+.t2 span,
+.t2 li {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: calc(60/20*1rem);
+    line-height: calc(66/20*1rem);
+    color: #fff;
+    font-weight: normal;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: 0rem;
+}
+
+@media (max-width: 450px) {
+
+    .t2,
+    .t2 a,
+    .t2 span,
+    .t2 li {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: calc(48/20*1rem);
+        line-height: calc(52/20*1rem);
+        color: #fff;
+        font-weight: normal;
+        text-transform: none;
+        font-style: normal;
+        letter-spacing: 0rem;
+    }
+
+    .t3,
+    .t3 a,
+    .t3 span,
+    .t3 li {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: calc(32/20*1rem);
+        line-height: calc(38/20*1rem);
+        color: #fff;
+        font-weight: normal;
+        text-transform: none;
+        font-style: normal;
+        letter-spacing: 0rem;
+    }
+}
+
+.t3,
+.t3 a,
+.t3 span,
+.t3 li {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: calc(40/20*1rem);
+    line-height: calc(44/20*1rem);
+    color: #fff;
+    font-weight: normal;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: 0rem;
+}
+
+.t4,
+.t4 a,
+.t4 span,
+.t4 li {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: calc(32/20*1rem);
+    line-height: calc(38/20*1rem);
+    color: #fff;
+    font-weight: normal;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: 0rem;
+}
+
+@media (max-width: 450px) {
+
+    .t4,
+    .t4 a,
+    .t4 span,
+    .t4 li {
+        font-family: 'Do Hyeon', sans-serif;
+        font-size: 18px;
+        line-height: 140%;
+        color: #fff;
+        font-weight: 500;
+        text-transform: none;
+        font-style: normal;
+        letter-spacing: 0rem;
+    }
+}
+
+.t5,
+.t5 a,
+.t5 span,
+.t5 li {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: calc(16/20*1rem);
+    line-height: calc(19/20*1rem);
+    color: #fff;
+    font-weight: 528;
+    text-transform: none;
+    font-style: normal;
+    letter-spacing: 0.01rem;
+}
+
+@media (max-width: 450px) {
+
+    .t5,
+    .t5 a,
+    .t5 span,
+    .t5 li {
+        font-size: 10px;
+        line-height: 14px;
+        font-weight: 400;
+    }
+}
+
+.t6,
+.t6 a,
+.t6 span,
+.t6 li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    line-height: 1.2rem;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 0.05rem;
+}
+
+.t7,
+.t7 a,
+.t7 span,
+.t7 li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    line-height: 1.2rem;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 0.05rem;
+}
+
+.font-large,
+.font-large a,
+.font-large p {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(26/20*1rem);
+    line-height: calc(33/20*1rem);
+    text-decoration: none;
+}
+
+.font-medium,
+.font-medium a,
+.font-medium p {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(24/20*1rem);
+    line-height: calc(31/20*1rem);
+}
+
+.font-default,
+.font-default p,
+.font-default a,
+legend,
+label,
+select,
+input,
+textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(20/20*1rem);
+    line-height: calc(30/20*1rem);
+}
+
+.font-default,
+.font-default a,
+.font-default p {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 468;
+}
+
+.font-small,
+.font-small a,
+.font-small p {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(14/20*1rem);
+    line-height: calc(20/20*1rem);
+    /* letter-spacing: 0.05rem;
+    letter-spacing: 0.9px; */
+    letter-spacing: 0.01em;
+}
+
+.font-xsmall,
+.font-xsmall a,
+.font-xsmall p {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(10/20*1rem);
+    line-height: calc(14/20*1rem);
+    letter-spacing: 0.05rem;
+}
+
+sub,
+sup {
+    font-size: 50%;
+    line-height: 100%;
+    vertical-align: super;
+}
+
+/** ---------------- Fonts --------------------**/
+
+
+/** ----------------Colors ---------------------**/
+
+/* Font Colors */
+.c1 {
+    color: #1E1E2E;
+}
+
+.c2 {
+    color: #A6ADC8;
+}
+
+.c3 {
+    color: #FF8B43;
+}
+
+.c4 {
+    color: #FFFFFF;
+}
+
+.c5 {
+    color: #585B70;
+}
+
+
+/* Background Colors */
+.b1 {
+    background: #1E1E2E;
+}
+
+.b2 {
+    background: #A6ADC8;
+}
+
+.b3 {
+    background: #FF8B43;
+}
+
+.b4 {
+    background: #FFFFFF;
+}
+
+.b5 {
+    background: #585B70;
+}
+
+
+
+/** ----------------Colors ---------------------**/
+
+
+/**---------------------- Logo ---------------------- **/
+
+.logo {
+    width: 180px;
+    height: 174px;
+    background-image: url('logo.svg');
+    /* Pfad zur SVG-Datei */
+    background-size: contain;
+    /* Passt das Logo an die Größe des Divs an */
+    background-repeat: no-repeat;
+    /* Verhindert das Wiederholen des Logos */
+    background-position: center;
+    /* Zentriert das Logo im Div */
+}
+
+.menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 34px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #A6ADC8;
+}
+
+.line.l2 {
+    margin: 10px 0;
+}

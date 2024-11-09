@@ -25,7 +25,9 @@ fn get_ip() -> Result<String> {
             if let IfAddr::V4(ifv4) = iface.addr {
                 let prefix_len = count_ones(&ifv4.netmask);
 
-                return Ok(format!("{}/{}", ip_addr, prefix_len));
+                let ip = format!("{}/{}", ip_addr, prefix_len);
+                info!(ip = &ip, "Found ip");
+                return Ok(ip);
             }
         }
     }
