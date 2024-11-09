@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>No Signal</title>
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="content">
+            <div id="titleContainer" class="title-container">
+                <div class="content">
+                    <h1 class="title">
+                        <br>Start a new scan now to<br>
+                        <span class="highlight">KEEP YOUR <br> NETWORK SAFE</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="main-flex-container">
+
+
+                <!-- Chart Container -->
+                <div id="chartContainer" class="chart-container">
+                    <canvas id="vulnChart"></canvas>
+                </div>
+
+                <!-- List Container (Wrapped in its own Flexbox) -->
+                <div id="listWrapper" class="list-wrapper">
+                    <div id="listContainer" class="list-container"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scan/Back Button -->
+    <div class="scan-button-container">
+        <a href="javascript:void(0);" class="scan-button" onclick="scan()">Scan</a>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const button = document.querySelector('.scan-button');
+            button.textContent = 'Scan'; // Ensure it starts with "Scan"
+        };
+
+        async function scan() {
+            try {
+                toggleButton();
+                const devices = [
+                    {
+                        name: "Device_A",
+                        ip: "192.168.1.10",
+                        mac: "00:1A:2B:3C:4D:5E",
+                        riscLevel: "medium",
+                        vulnerabilities: [
+                            {name: "Vuln_X", riscLevel: "high", cviScore: 8.7},
+                            {name: "Vuln_Y", riscLevel: "medium", cviScore: 5.4},
+                            {name: "Vuln_Z", riscLevel: "low", cviScore: 3.1}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", desc: "Testdescription Device_B Vulwekrnjwoiernwieurfnwipeubfwipuefn_A", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", desc: "Testdescription Device_B Vuln_B", cviScore: 4.6}
+                        ]
+                    },
+                    {
+                        name: "Device_B",
+                        ip: "192.168.1.11",
+                        mac: "00:1A:2B:3C:4D:5F",
+                        riscLevel: "low",
+                        vulnerabilities: [
+                            {name: "Vuln_A", riscLevel: "low", desc: "Testdescription Device_B Vuln_A", cviScore: 2.5},
+                            {name: "Vuln_B", riscLevel: "medium", desc: "Testdescription Device_B Vuln_B", cviScore: 4.6}
+                        ]
+                    }
+                ];
+                //console.log(await fetch("http://localhost:3000/scan"))
+                console.log("Hello from tauri")
+                const invoke = window.__TAURI__.core.invoke
+                console.log(await invoke("scan"))
+
+
+                // Generate list
+                generateList(devices);
+
+                // Generate pie chart
+                generateVulnChart(devices);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        function generateList(devices) {
+            const container = document.getElementById('listContainer');
+            if (container) {
+                container.innerHTML = ''; // Clear existing content
+
+                const flexContainer = document.createElement('div');
+                flexContainer.className = 'flex-container';
+
+                devices.forEach(device => {
+                    const card = document.createElement('div');
+                    card.className = 'device-card';
+
+                    card.addEventListener('click', () => {
+                        const details = card.querySelector('.details');
+                        details.classList.toggle('show');
+                    });
+
+                    const nameBadgeRow = document.createElement('div');
+                    nameBadgeRow.className = 'name-badge-row';
+
+                    const deviceName = document.createElement('span');
+                    deviceName.className = 'device-name';
+                    deviceName.textContent = device.name;
+
+                    const riscBadge = document.createElement('span');
+                    riscBadge.className = `risk-badge ${getRiscLevelClass(device.riscLevel)}`;
+                    riscBadge.textContent = device.riscLevel;
+
+                    nameBadgeRow.appendChild(deviceName);
+                    nameBadgeRow.appendChild(riscBadge);
+
+                    card.appendChild(nameBadgeRow);
+
+                    const details = document.createElement('div');
+                    details.className = 'details hidden';
+
+                    const vulnList = document.createElement('ul');
+                    vulnList.className = 'vuln-list';
+
+                    device.vulnerabilities.forEach(vuln => {
+                        const vulnItem = document.createElement('li');
+                        vulnItem.className = 'vuln-item';
+
+                        const vulnName = document.createElement('span');
+                        vulnName.className = 'vuln-name';
+                        vulnName.textContent = vuln.name;
+
+                        // Create a description element
+                        const vulnDesc = document.createElement('span');
+                        vulnDesc.className = 'vuln-description';
+                        vulnDesc.textContent = vuln.desc || 'No description available';
+
+                        const vulnRiscBadge = document.createElement('span');
+                        vulnRiscBadge.className = `risk-badge ${getRiscLevelClass(vuln.riscLevel)}`;
+                        vulnRiscBadge.textContent = vuln.riscLevel;
+
+                        vulnItem.appendChild(vulnName);
+                        vulnItem.appendChild(vulnDesc); // Append description
+                        vulnItem.appendChild(vulnRiscBadge);
+
+                        vulnList.appendChild(vulnItem);
+                    });
+
+                    details.appendChild(vulnList);
+                    card.appendChild(details);
+
+                    flexContainer.appendChild(card);
+                });
+
+                container.appendChild(flexContainer);
+            }
+        }
+
+
+        function getRiscLevelClass(riscLevel) {
+            switch (riscLevel) {
+                case 'high':
+                    return 'high-risk';
+                case 'medium':
+                    return 'medium-risk';
+                case 'low':
+                    return 'low-risk';
+                default:
+                    return '';
+            }
+        }
+
+        function toggleButton() {
+            const button = document.querySelector('.scan-button');
+            const titleContainer = document.getElementById('titleContainer');
+            const chartContainer = document.getElementById('chartContainer');
+            const currentText = button.textContent;
+
+            if (currentText === 'Scan') {
+                button.textContent = 'Back';
+                titleContainer.style.display = 'none';
+                chartContainer.style.display = 'block';
+
+                document.getElementById('listContainer').style.display = 'block';
+            } else {
+                button.textContent = 'Scan';
+                titleContainer.style.display = 'block';
+                chartContainer.style.display = 'none';
+                document.getElementById('listContainer').style.display = 'none';
+            }
+        }
+
+        function generateVulnChart(devices) {
+            const riskCounts = {high: 0, medium: 0, low: 0};
+
+            devices.forEach(device => {
+                device.vulnerabilities.forEach(vuln => {
+                    riskCounts[vuln.riscLevel]++;
+                });
+            });
+
+            const ctx = document.getElementById('vulnChart').getContext('2d');
+
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['High Risk: ' + riskCounts.high, 'Medium Risk: ' + riskCounts.medium, 'Low Risk: ' + riskCounts.low],
+                    datasets: [{
+                        label: 'Vulnerabilities by Risk Level',
+                        data: [riskCounts.high, riskCounts.medium, riskCounts.low],
+                        backgroundColor: ['#e74c3c', '#f39c12', '#2ecc71'],
+                        borderColor: ['#ffffff', '#ffffff', '#ffffff'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return tooltipItem.label + ' vulnerabilities';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
