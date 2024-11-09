@@ -370,7 +370,7 @@ sup {
 .spinner {
     border: 8px solid #f3f3f3;
     /* Light gray background */
-    border-top: 8px solid #4caf50;
+    border-top: 8px solid #FF8B43;
     /* Green color for the spinner */
     border-radius: 50%;
     width: 50px;
