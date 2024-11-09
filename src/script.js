@@ -42,7 +42,7 @@ function generateList(devices) {
         // Total Devices
         const deviceCountReference = document.getElementById("deviceCount");
         deviceCountReference.innerHTML =
-            '<p>Total Devices: <span class="text">' + devices.length + "</span></p>";
+            '<p>Total Devices: <span class="text" style="color: white;">' + devices.length + "</span></p>";
 
         devices.forEach((device) => {
             const card = document.createElement("div");
@@ -107,15 +107,15 @@ function generateList(devices) {
                 vulnItem.appendChild(vulnDesc); // Append description
                 vulnItem.appendChild(vulnRiscBadge);
 
-                if (vuln.risk_level == "High" || vuln.risk_level == "Medium") {
-                    vulnItem.appendChild(document.createElement("br"))
-                    const vulnHelpButton = document.createElement("a");
-                    vulnHelpButton.className = 'c3 inter'
-                    vulnHelpButton.textContent = "Get help"
-                    vulnHelpButton.href = "https://www.telmekom.com/support"
-                    vulnHelpButton.target = "_blank"
-                    vulnItem.appendChild(vulnHelpButton);
-                }
+                //if (vuln.risk_level == "High" || vuln.risk_level == "Medium") {
+                //    vulnItem.appendChild(document.createElement("br"))
+                //    const vulnHelpButton = document.createElement("a");
+                //    vulnHelpButton.className = 'c3 inter'
+                //    vulnHelpButton.textContent = "Get help"
+                //    vulnHelpButton.href = "https://www.telmekom.com/support"
+                //    vulnHelpButton.target = "_blank"
+                //    vulnItem.appendChild(vulnHelpButton);
+                //}
 
                 vulnList.appendChild(vulnItem);
             });

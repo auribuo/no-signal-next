@@ -33,7 +33,7 @@ pub struct Device {
     id: i16,
     name: String,
     ip: String,
-    risk_level: RiskLevel,
+    pub risk_level: RiskLevel,
     pub vulnerabilities: Vec<Vulnerability>,
 }
 
