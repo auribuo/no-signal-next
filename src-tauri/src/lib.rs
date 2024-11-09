@@ -45,7 +45,6 @@ async fn scan() -> Result<ScanResult, String> {
     match scan::scan(get_ip().map_err(|e| e.to_string())?).await {
         Ok(results) => {
             let mut res: ScanResult = results.into();
-
             for dev in res.devices.iter_mut() {
                 for vuln in dev.vulnerabilities.iter_mut() {
                     match gemini::explain_cve(vuln.name.clone()).await {
@@ -55,6 +54,8 @@ async fn scan() -> Result<ScanResult, String> {
                         }
                     }
                 }
+                dev.vulnerabilities
+                    .sort_by(|a, b| b.cve_score.total_cmp(&a.cve_score));
             }
 
             Ok(res)

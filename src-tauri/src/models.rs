@@ -46,7 +46,6 @@ impl Device {
                 break;
             } else if let RiskLevel::Medium = lvl {
                 risk_level = RiskLevel::Medium;
-                break;
             }
         }
 
@@ -66,7 +65,7 @@ pub struct Vulnerability {
     pub name: String,
     pub description: String,
     risk_level: RiskLevel,
-    cve_score: f32,
+    pub cve_score: f32,
 }
 
 impl Vulnerability {

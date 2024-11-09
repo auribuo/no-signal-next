@@ -124,25 +124,47 @@ impl Into<ScanResult> for Vec<scannerlib::models::Result> {
                 vec![
                     Vulnerability::new(0, "CVE-2024-9936".to_string(), 6.5),
                     Vulnerability::new(1, "CVE-2021-43893".to_string(), 7.5),
+                    Vulnerability::new(2, "CVE-2023-5716".to_string(), 9.8),
                 ],
             ),
             Device::new(
                 1,
                 "LG Smart TV".to_string(),
                 "10.199.213.170".to_string(),
-                vec![Vulnerability::new(2, "CVE-2023-6317".to_string(), 7.2)],
+                vec![Vulnerability::new(3, "CVE-2023-6317".to_string(), 7.2)],
             ),
             Device::new(
                 2,
                 "SmartFridgeX223".to_string(),
                 "10.199.213.142".to_string(),
-                vec![Vulnerability::new(3, "CVE-2024-41999".to_string(), 6.8)],
+                vec![Vulnerability::new(4, "CVE-2024-41999".to_string(), 6.8)],
             ),
             Device::new(
                 3,
                 "NginxProxy".to_string(),
                 "10.199.213.144".to_string(),
-                vec![Vulnerability::new(4, "CVE-2024-24989".to_string(), 6.8)],
+                vec![Vulnerability::new(5, "CVE-2024-24989".to_string(), 6.8)],
+            ),
+            Device::new(
+                4,
+                "Apache2".to_string(),
+                "10.199.213.145".to_string(),
+                vec![Vulnerability::new(6, "CVE-2012-0021".to_string(), 3.1)],
+            ),
+            Device::new(
+                5,
+                "Samsung Galaxy S7".to_string(),
+                "10.199.213.33".to_string(),
+                vec![
+                    Vulnerability::new(7, "CVE-2024-34636".to_string(), 4.0),
+                    Vulnerability::new(8, "CVE-2023-42482".to_string(), 4.7),
+                ],
+            ),
+            Device::new(
+                6,
+                "TexasIntstruments SmartCalc".to_string(),
+                "10.199.213.1".to_string(),
+                vec![Vulnerability::new(9, "CVE-2021-34149".to_string(), 2.8)],
             ),
         ]);
         res
