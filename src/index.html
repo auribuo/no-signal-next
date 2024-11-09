@@ -50,9 +50,6 @@
             <div id="errorContainer" class="errorContainer">
                 <h1 class="title inter c3">
                     ERROR: No Data Found
-                    <div id="spinner-container" class="spinner-container">
-                        <div id="spinner" class="spinner"></div>
-                    </div>
                 </h1>
             </div>
         </div>
@@ -60,7 +57,11 @@
 
     <!-- Scan/Back Button -->
     <div class="scan-button-container">
-        <a href="javascript:void(0);" class="scan-button inter b3 c4" onclick="scan()">Scan</a>
+        <a href="javascript:void(0);" class="scan-button inter b3 c4" onclick="scan()">Scan
+            <div id="spinner-container" class="spinner-container">
+                <div id="spinner" class="spinner"></div>
+            </div>
+        </a>
     </div>
 </body>
 
