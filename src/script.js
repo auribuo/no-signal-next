@@ -128,6 +128,7 @@ function getRiscLevelClass(riscLevel) {
 }
 
 function toggleButton() {
+    console.log("button.innerHTML")
     const button = document.querySelector(".scan-button");
     const titleContainer = document.getElementById("titleContainer");
     const resultContainer = document.getElementById("resultContainer");

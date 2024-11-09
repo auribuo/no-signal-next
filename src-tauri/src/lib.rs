@@ -65,7 +65,7 @@ async fn scan() -> Result<ScanResult, String> {
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    dotenv().unwrap();
+    dotenv().unwrap_or_default();
     tracing_subscriber::fmt().init();
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
