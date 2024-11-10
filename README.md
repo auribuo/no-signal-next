@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This app is a prototype. It represents but not executes the functionality it should
+
 # Tauri + Vanilla
 
 This template should help get you started developing with Tauri in vanilla HTML, CSS and Javascript.
